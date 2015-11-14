@@ -2,6 +2,7 @@ TARGET := libprocessing-simpletouch.so
 OBJS := impl.o
 CC := gcc
 
+# add -m32 to compile for x86 on x64
 CFLAGS := -std=c99 -fPIC -g
 CFLAGS += -I$(shell dirname $(shell realpath $(shell which javac)))/../include
 CFLAGS += -I$(shell dirname $(shell realpath $(shell which javac)))/../include/linux
