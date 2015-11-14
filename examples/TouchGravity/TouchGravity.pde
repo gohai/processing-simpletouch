@@ -10,9 +10,11 @@ Sun[] suns = new Sun[0];
 void setup() {
   fullScreen();
 
-  // println("Available input devices:");
-  // printArray(SimpleTouch.list());
+  //println("Available input devices:");
+  //printArray(SimpleTouch.list());
 
+  // without a second argument, SimpleTouch() will try
+  // to open the first input device ("event0")
   touchscreen = new SimpleTouch(this);
   println("Opened device: " + touchscreen.name());
 
