@@ -24,6 +24,22 @@
                                ../../mode/jdtCompilerAdapter.jar" />
     </javac>
   </target>
+
+  <target name="javadoc">
+    <javadoc bottom="Processing Library Simple Touch by Gottfried Haider"
+        classpath="../processing-master/core/library/core.jar"
+        destdir="reference"
+        verbose="false"
+        stylesheetfile="reference/stylesheet.css"
+        doctitle="Javadocs: Simple Touch"
+        public="true" version="false"
+        windowtitle="Javadocs: Simple Touch">
+      <fileset dir="src/processing" defaultexcludes="yes">
+      <!-- add packages to be added to reference. -->
+        <include name="**/*"/>
+      </fileset>
+    </javadoc>
+  </target>
   
   <target name="build" depends="compile" description="Build Simple Touch library">
     <jar basedir="bin" destfile="library/simpletouch.jar" />

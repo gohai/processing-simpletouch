@@ -29,7 +29,7 @@ import processing.core.*;
 
 
 /**
- *  @webref
+ *  Class for getting touch events on Linux
  */
 public class SimpleTouch {
 
@@ -40,9 +40,9 @@ public class SimpleTouch {
 
   /**
    *  Opens a touch input device
+   *  @param parent typically use "this"
    *  @param dev interface name
    *  @see list
-   *  @webref
    */
   public SimpleTouch(PApplet parent, String dev) {
     if (!"Linux".equals(System.getProperty("os.name"))) {
@@ -62,7 +62,7 @@ public class SimpleTouch {
 
   /**
    *  Opens the first input device
-   *  @webref
+   *  @param parent typically use "this"
    */
   public SimpleTouch(PApplet parent) {
     this(parent, "event0");
@@ -71,7 +71,6 @@ public class SimpleTouch {
 
   /**
    *  Closes the input device
-   *  @webref
    */
   public void close() {
     if (ptr == 0) {
@@ -90,7 +89,6 @@ public class SimpleTouch {
   /**
    *  Lists all available input devices
    *  @return String array
-   *  @webref
    */
   public static String[] list() {
     ArrayList<String> devs = new ArrayList<String>();

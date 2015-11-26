@@ -24,7 +24,7 @@ package processing.simpletouch;
 
 
 /**
- *  @webref
+ *  A single touch event
  */
 public class SimpleTouchEvt {
 
@@ -39,7 +39,7 @@ public class SimpleTouchEvt {
    */
   public float y;
   /**
-   * ABS_MT_TRACKING_ID
+   * ABS_MT_TRACKING_ID, a unique identifier for every tracked object
    */ 
   public int id;
   
