@@ -20,7 +20,7 @@
   Boston, MA  02111-1307  USA
 */
 
-package processing.simpletouch;
+package gohai.simpletouch;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 // Based on Gravitational Attraction (3D)
 // by Daniel Shiffman
 
-import processing.simpletouch.*;
+import gohai.simpletouch.*;
 SimpleTouch touchscreen;
 
 Planet[] planets = new Planet[10];

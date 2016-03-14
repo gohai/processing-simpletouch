@@ -1,4 +1,4 @@
-import processing.simpletouch.*;
+import gohai.simpletouch.*;
 SimpleTouch touchscreen;
 
 void setup() {

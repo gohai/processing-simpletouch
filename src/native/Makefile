@@ -14,7 +14,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
 
 iface.h:
-	javah -classpath .. -o iface.h processing.simpletouch.SimpleTouch
+	javah -classpath .. -o iface.h gohai.simpletouch.SimpleTouch
 
 clean:
 	rm -f $(TARGET) $(OBJS)

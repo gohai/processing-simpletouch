@@ -34,7 +34,7 @@
         doctitle="Javadocs: Simple Touch"
         public="true" version="false"
         windowtitle="Javadocs: Simple Touch">
-      <fileset dir="src/processing" defaultexcludes="yes">
+      <fileset dir="src/gohai" defaultexcludes="yes">
       <!-- add packages to be added to reference. -->
         <include name="**/*"/>
       </fileset>

@@ -30,7 +30,7 @@
 #include "iface.h"
 
 
-JNIEXPORT jlong JNICALL Java_processing_simpletouch_SimpleTouch_openDevice
+JNIEXPORT jlong JNICALL Java_gohai_simpletouch_SimpleTouch_openDevice
   (JNIEnv *env, jclass cls, jstring _fn)
 {
 	const char *fn = (*env)->GetStringUTFChars(env, _fn, JNI_FALSE);
@@ -54,7 +54,7 @@ JNIEXPORT jlong JNICALL Java_processing_simpletouch_SimpleTouch_openDevice
 	return (uintptr_t)dev;
 }
 
-JNIEXPORT jstring JNICALL Java_processing_simpletouch_SimpleTouch_getName
+JNIEXPORT jstring JNICALL Java_gohai_simpletouch_SimpleTouch_getName
   (JNIEnv *env, jclass cls, jlong ptr)
 {
 	struct libevdev *dev = (struct libevdev*)(uintptr_t)ptr;
@@ -66,7 +66,7 @@ JNIEXPORT jstring JNICALL Java_processing_simpletouch_SimpleTouch_getName
 	}
 }
 
-JNIEXPORT jobjectArray JNICALL Java_processing_simpletouch_SimpleTouch_getTouches
+JNIEXPORT jobjectArray JNICALL Java_gohai_simpletouch_SimpleTouch_getTouches
   (JNIEnv *env, jclass cls, jlong ptr)
 {
 	struct libevdev *dev = (struct libevdev*)(uintptr_t)ptr;
@@ -128,7 +128,7 @@ JNIEXPORT jobjectArray JNICALL Java_processing_simpletouch_SimpleTouch_getTouche
 	return touchEvents;
 }
 
-JNIEXPORT void JNICALL Java_processing_simpletouch_SimpleTouch_closeDevice
+JNIEXPORT void JNICALL Java_gohai_simpletouch_SimpleTouch_closeDevice
   (JNIEnv *env, jclass cls, jlong ptr)
 {
 	struct libevdev *dev = (struct libevdev*)(uintptr_t)ptr;
