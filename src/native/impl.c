@@ -97,7 +97,7 @@ JNIEXPORT jobjectArray JNICALL Java_gohai_simpletouch_SimpleTouch_getTouches
 	}
 
 	// could be pre-computed
-	jclass touchEventCls = (*env)->FindClass(env, "processing/simpletouch/SimpleTouchEvt");
+	jclass touchEventCls = (*env)->FindClass(env, "gohai/simpletouch/SimpleTouchEvt");
 	jmethodID touchEventCtorId = (*env)->GetMethodID(env, touchEventCls, "<init>", "()V");
 	jfieldID touchEventXId = (*env)->GetFieldID(env, touchEventCls, "x", "F");
 	jfieldID touchEventYId = (*env)->GetFieldID(env, touchEventCls, "y", "F");
