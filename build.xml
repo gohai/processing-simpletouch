@@ -44,4 +44,16 @@
   <target name="build" depends="compile" description="Build Simple Touch library">
     <jar basedir="bin" destfile="library/simpletouch.jar" />
   </target>
+
+  <target name="dist" depends="build,javadoc">
+    <zip destfile="../processing-simpletouch.zip">
+      <zipfileset dir="." prefix="simpletouch">
+        <exclude name="bin/**"/>
+        <exclude name="examples/**/application.*/**"/>
+        <exclude name="**/sftp-config.json"/>
+      </zipfileset>
+    </zip>
+    <copy file="library.properties"
+          toFile="../processing-simpletouch.txt"/>
+  </target>
 </project>
