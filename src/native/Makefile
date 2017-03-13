@@ -3,7 +3,7 @@ OBJS := impl.o
 CC := gcc
 
 # add -m32 to compile for x86 on x64
-CFLAGS := -std=c99 -fPIC -g
+CFLAGS := -std=c99 -fPIC -g -ffast-math
 CFLAGS += -I$(shell dirname $(shell realpath $(shell which javac)))/../include
 CFLAGS += -I$(shell dirname $(shell realpath $(shell which javac)))/../include/linux
 CFLAGS += $(shell pkg-config libevdev --cflags)
