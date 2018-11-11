@@ -17,17 +17,21 @@ void setup() {
   
   for (int i=0; i<devs.length();i++) {
     println("Try to open device: " + devs[i]);
-    try {
+    try { //try to open touchscreen device
       touchscreen = new SimpleTouch(this, devs[0]);
-      } catch (RuntimeException e) {
-        continue;
+      } catch (RuntimeException e) { 
+        continue; //try next device
     }
-    String[] devName = match(touchscreen.name(),"FT5406"); //Raspberry Pi Displays touch screen driver
-    if (devName != null) break;
-    else println(touchscreen.name() + "is not the desired device");
-   }
-   
-   println("Opened device: " + touchscreen.name());
+    
+    
+    if (touchscreen == null){ //processed all devices without a hit
+      println("No input devices available");
+      exit();
+    }
+    else {
+      println("Opened device: " + touchscreen.name());
+      break;
+    }
     
 }
 
