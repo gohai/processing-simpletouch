@@ -10,13 +10,20 @@ void setup() {
   String[] devs = SimpleTouch.list();
   printArray(devs);
 
-  if (devs.length == 0) {
+  for (int i=0; i < devs.length; i++) {
+    try {
+      touchscreen = new SimpleTouch(this, devs[i]);
+      println("Opened device: " + touchscreen.name());
+    } catch (RuntimeException e) {
+      // not all input devices are touch screens
+      continue;
+    }
+  }
+
+  if (touchscreen == null) {
     println("No input devices available");
     exit();
   }
-
-  touchscreen = new SimpleTouch(this, devs[0]);
-  println("Opened device: " + touchscreen.name());
 }
 
 void draw() {

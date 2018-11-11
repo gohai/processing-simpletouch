@@ -10,13 +10,24 @@ Sun[] suns = new Sun[0];
 void setup() {
   fullScreen();
 
-  //println("Available input devices:");
-  //printArray(SimpleTouch.list());
+  println("Available input devices:");
+  String[] devs = SimpleTouch.list();
+  printArray(devs);
 
-  // without a second argument, SimpleTouch() will try
-  // to open the first input device ("event0")
-  touchscreen = new SimpleTouch(this);
-  println("Opened device: " + touchscreen.name());
+  for (int i=0; i < devs.length; i++) {
+    try {
+      touchscreen = new SimpleTouch(this, devs[i]);
+      println("Opened device: " + touchscreen.name());
+    } catch (RuntimeException e) {
+      // not all input devices are touch screens
+      continue;
+    }
+  }
+
+  if (touchscreen == null) {
+    println("No input devices available");
+    exit();
+  }
 
   // place some planets
   for (int i = 0; i < planets.length; i++) {
